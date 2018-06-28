@@ -1,4 +1,4 @@
-package br.com.ednilton.cms.domain.resouces;
+package br.com.ednilton.cms.domain.vo;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ednilton.cms.domain.model.News;
 import br.com.ednilton.cms.domain.model.Review;
-import br.com.ednilton.cms.domain.resouces.request.NewsRequest;
+import br.com.ednilton.cms.domain.vo.NewsRequest;
 
 @RestController
 @RequestMapping("/api/news")
