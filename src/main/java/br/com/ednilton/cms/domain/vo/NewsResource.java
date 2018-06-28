@@ -16,10 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ednilton.cms.domain.model.News;
 import br.com.ednilton.cms.domain.model.Review;
-import br.com.ednilton.cms.domain.vo.NewsRequest;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/api/news")
+@Api(tags="news", value="Category API")
 public class NewsResource {
 	
 	@GetMapping(value="/{id}")
@@ -28,6 +32,11 @@ public class NewsResource {
 	}
 	
 	@GetMapping
+	@ApiOperation(value = "List News",notes = "List all news")
+	  @ApiResponses(value = {
+	      @ApiResponse(code = 200,message = "News found"),
+	      @ApiResponse(code = 404,message = "News not found")
+	  })
 	public ResponseEntity<List<News>> findAll(){
 		return ResponseEntity.ok(Arrays.asList(new News(), new News()));
 	}
