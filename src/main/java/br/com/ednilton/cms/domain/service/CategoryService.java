@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import br.com.ednilton.cms.domain.model.Category;
+import br.com.ednilton.cms.domain.repository.CategoryRepository;
 
 @Service
 public class CategoryService {

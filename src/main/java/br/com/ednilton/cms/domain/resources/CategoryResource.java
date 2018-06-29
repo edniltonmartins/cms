@@ -1,4 +1,4 @@
-package br.com.ednilton.cms.domain.resouces;
+package br.com.ednilton.cms.domain.resources;
 
 import java.util.List;
 
@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ednilton.cms.domain.model.Category;
+import br.com.ednilton.cms.domain.service.CategoryService;
+import br.com.ednilton.cms.domain.vo.CategoryRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -57,7 +59,7 @@ public class CategoryResource {
       @ApiResponse(code = 201,message = "Category created successfully"),
       @ApiResponse(code = 400,message = "Invalid request")
   })
-  public ResponseEntity<Category> newCategory(@RequestBody CategoryRequest category){
+  public ResponseEntity<Category> newCategory(@RequestBody Category category){
     return new ResponseEntity<>(this.categoryService.create(category), HttpStatus.CREATED);
   }
 

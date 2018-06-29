@@ -6,6 +6,8 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import br.com.ednilton.cms.domain.model.User;
+import br.com.ednilton.cms.domain.repository.UserRepository;
+import br.com.ednilton.cms.domain.vo.UserRequest;
 
 @Service
 public class UserService {
